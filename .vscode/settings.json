@@ -1,0 +1,49 @@
+{
+    "makefile.configureOnOpen": true,
+    "go.inferGopath": true,
+    "go.toolsGopath": "~/.gvm/pkgsets/go1.21/global",
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "golang.go",
+    },
+    "go.lintOnSave": "package",
+    "go.formatTool": "goimports",
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.autocompleteUnimportedPackages": true,
+    "go.useLanguageServer": true,
+    "go.vetOnSave": "package",
+    "go.buildTags": "",
+    "go.buildFlags": [],
+    "go.lintFlags": [],
+    "go.vetFlags": [],
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+    "go.gocodeAutoBuild": false,
+    "go.alternateTools": {
+        "go-langserver": "gopls",
+    },
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true
+    },
+    "gopls": {
+        "ui.semanticTokens": true,
+        "usePlaceholders": true,
+        "staticcheck": true,
+        "analyses": {
+            "fillreturns": true,
+            "nonewvars": true,
+            "undeclaredname": true,
+            "unusedparams": true
+        },
+        "completeUnimported": true,
+        "deepCompletion": true
+    },
+    "editor.lightbulb.enabled": "onCode",
+}
