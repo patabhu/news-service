@@ -9,10 +9,10 @@ import (
 	"google.golang.org/genai"
 )
 
-func generateSummary(description string) string {
+var llmClient *genai.Client
 
-	ctx := context.Background()
-	client, err := genai.NewClient(ctx, &genai.ClientConfig{
+func initLLMClient() {
+	client, err := genai.NewClient(context.Background(), &genai.ClientConfig{
 		Project:  "",
 		Location: "",
 		Backend:  genai.BackendVertexAI,
@@ -30,8 +30,14 @@ func generateSummary(description string) string {
 	if err != nil {
 		log.Fatal(err)
 	}
+	llmClient = client
+}
 
-	result, err := client.Models.GenerateContent(
+func generateSummary(description string) string {
+
+	ctx := context.Background()
+
+	result, err := llmClient.Models.GenerateContent(
 		ctx,
 		"gemini-3-pro-preview",
 		genai.Text(fmt.Sprintf(`You are a news summarization service.

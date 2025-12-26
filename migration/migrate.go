@@ -13,6 +13,8 @@ import (
 func Migrate(conf config.Config) {
 
 	migrateConf := conf.Migration
+	initLLMClient()
+
 	dbconn := Connect(conf)
 
 	if migrateConf.CreateTables {

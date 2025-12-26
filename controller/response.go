@@ -6,8 +6,8 @@ import (
 )
 
 func WriteResponse(w http.ResponseWriter, code int, r interface{}) {
-	w.WriteHeader(code)
 	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(code)
 	b, err := json.Marshal(r)
 	if err != nil {
 		return
