@@ -2,7 +2,7 @@
 - It will init database tables and required entities.
 - It will dump data from migration/newsdump.json file or can do it from API for latest news.
 - It will connect with LLM to add summary for news data dump.
-- For LLM connection, Setup gcloud application default credentials in local at path ~/.config/gcloud/application_default_credentials.json to use google api's.
+- For LLM connection, Setup gcloud application default credentials in local at path `~/.config/gcloud/application_default_credentials.json` to use google api's.
 
 # news api service:
 - `category API` - Get latest news for categoryName provided.
